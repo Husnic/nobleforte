@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf6;
+  --foreground: #0b2644;
 }
 
 @theme inline {
+  --color-ink: #0b2644;
+  --color-navy: #0b2644;
+  --color-navy-deep: #071a30;
+  --color-sky: #5b9cd6;
+  --color-sky-light: #eaf3fb;
+  --color-gold: #c9a24a;
+  --color-paper: #fbfaf6;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-sora);
+  --font-serif: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  line-height: 1.15;
+}
+
+::selection {
+  background: var(--color-sky);
+  color: #fff;
+}
+
+.container-xw {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-xw {
+    padding-inline: 3rem;
+  }
+}
+
+.bg-grain {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
 }
